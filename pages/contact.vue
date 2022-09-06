@@ -44,15 +44,15 @@
         </div>
 
         <form class="bg-white rounded-lg p-8 flex flex-col shadow-md lg:w-6/12">
-          <div class="relative mb-4 flex">
-            <div class="mr-3">
+          <div class="relative mb-4 lg:flex">
+            <div class="lg:mr-3">
               <label for="prenom" class="leading-7 text-sm text-gray-600">Prénom</label>
               <input
                 type="text" id="prenom" name="prenom" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 v-model="prenom"
               >
             </div>
-            <div class="ml-3">
+            <div class="lg:ml-3">
               <label for="nom" class="leading-7 text-sm text-gray-600">Nom</label>
               <input
                 type="text" id="nom" name="nom" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
