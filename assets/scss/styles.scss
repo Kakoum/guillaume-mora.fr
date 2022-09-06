@@ -1,0 +1,101 @@
+// Imports Tailwind.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Imports fichiers.
+@import 'elements/variables';
+@import 'elements/mixins';
+
+// Import font.
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html {
+	position: relative;
+	@include backlight(#0fffc1, #7e0fff, 10s, 0);
+	background-color: black;
+}
+body {
+	font-family: 'Inter', sans-serif;
+  position: relative;
+}
+.screen {
+	background-color: #0B1121;
+	margin: 12px;
+	min-height: calc(100vh - 24px);
+}
+nav {
+  a {
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: 0.25s;
+    opacity: 0.7;
+    &.nuxt-link-exact-active, &:hover {
+      //border-color: white;
+      opacity: 1;
+    }
+  }
+}
+
+.container {
+	max-width: 1280px;
+  padding-left: 40px;
+  padding-right: 40px;
+	box-sizing: border-box;
+	min-height: calc(100vh - 24px);
+  @screen md {
+    padding-left: 80px;
+	  padding-right: 80px;
+  }
+}
+
+.container {
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+  .contact {
+    font-size: 1rem;
+  }
+}
+.link-contact {
+  a {
+    border-bottom: 1px solid $color-main;
+    padding-bottom: 2px;
+    transition: 0.2s;
+  }
+  .arrow-right {
+    padding-left: 0px;
+    transition: 0.25s;
+  }
+}
+.link-contact:hover {
+  a {
+    border-bottom-width: 2px;
+    padding-bottom: 1px;
+  }
+  .arrow-right {
+    padding-left: 4px;
+  }
+}
+// .footer {
+//   border-top: 1px solid white;
+// }
+
+// .contact {
+// 	margin: auto;
+// 	margin-bottom: 0;
+// 	margin-top: 4rem;
+// 	width: fit-content;
+// 	padding: 0.75rem 2rem;
+// 	position: relative;
+// 	z-index: 10;
+// 	@include backlight(#0fffc1, #7e0fff, 10s, 9999px);
+// }
