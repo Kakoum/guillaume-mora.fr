@@ -47,23 +47,62 @@
           <div class="relative mb-4 flex">
             <div class="mr-3">
               <label for="prenom" class="leading-7 text-sm text-gray-600">Prénom</label>
-              <input type="text" id="prenom" name="prenom" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input
+                type="text" id="prenom" name="prenom" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                v-model="prenom"
+              >
             </div>
             <div class="ml-3">
               <label for="nom" class="leading-7 text-sm text-gray-600">Nom</label>
-              <input type="text" id="nom" name="nom" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input
+                type="text" id="nom" name="nom" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                v-model="nom"
+              >
             </div>
           </div>
           <div class="relative mb-4">
             <label for="courriel" class="leading-7 text-sm text-gray-600">Courriel</label>
-            <input type="email" id="courriel" name="courriel" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            <input
+              type="email" id="courriel" name="courriel" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              v-model="courriel"
+            >
           </div>
           <div class="relative mb-4">
             <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-            <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            <textarea
+              id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-main focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 leading-6 transition-colors duration-200 ease-in-out"
+              v-model="message"
+            ></textarea>
           </div>
-          <button class="text-white bg-main border-0 py-2 px-6 focus:outline-none hover:bg-main-darker rounded text-lg">Envoyer !</button>
+          <button 
+            class="text-white bg-main border-0 py-2 px-6 focus:outline-none hover:bg-main-darker rounded text-lg"
+            @click.prevent="send"
+          >
+            Envoyer !
+          </button>
         </form>
       </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      prenom: '',
+      nom: '',
+      courriel: '',
+      message: '',
+    }
+  },
+  methods: {
+    send() {
+      this.$mail.send({
+        from: this.courriel,
+        subject: 'Contact - ' + this.nom + ' ' + this.prenom,
+        text: this.message,
+      })
+    }
+  }
+}
+</script>

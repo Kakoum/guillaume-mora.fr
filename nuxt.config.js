@@ -36,6 +36,21 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    ['nuxt-mail', {
+      message: {
+        to: process.env.MAIL_TO,
+      },
+      smtp: {
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        // service: 'gmail',
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
+        },
+      },
+    }],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
