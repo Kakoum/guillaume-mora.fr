@@ -97,7 +97,7 @@ export default {
   },
   methods: {
     send() {
-      this.$mail.send({
+      this.$axios.$post('/mail/send', {
         from: this.courriel,
         subject: 'Contact - ' + this.nom + ' ' + this.prenom,
         text: this.message,

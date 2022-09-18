@@ -7,7 +7,7 @@
       Ces dernières années j'ai évolué principalement sur le CMS <strong class="font-semibold">Drupal</strong>, bien que je sois curieux pour les autres technologies.
     </p>
     <p class="contact mt-8 font-light">
-      Envie d'échanger ? <span class="link-contact font-normal "><NuxtLink to="/contact">Prenons contact</NuxtLink> <ArrowSVG /></span>
+      Envie d'échanger ? <span class="link-contact font-normal block sm:inline"><NuxtLink to="/contact">Prenons contact</NuxtLink> <ArrowSVG /></span>
     </p>
   </div>
 </template>
