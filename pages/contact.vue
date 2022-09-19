@@ -43,7 +43,7 @@
           </ul>
         </div>
 
-        <form class="bg-white rounded-lg p-8 flex flex-col shadow-md lg:w-6/12">
+        <form class="bg-white rounded-lg p-6 sm:p-8 flex flex-col shadow-md lg:w-6/12">
           <div class="relative mb-4 lg:flex">
             <div class="lg:mr-3">
               <label for="prenom" class="leading-7 text-sm text-gray-600">Prénom</label>
@@ -97,11 +97,11 @@ export default {
   },
   methods: {
     send() {
-      this.$axios.$post('/mail/send', {
-        from: this.courriel,
-        subject: 'Contact - ' + this.nom + ' ' + this.prenom,
-        text: this.message,
-      })
+      // this.$axios.$post('/mail/send', {
+      //   from: this.courriel,
+      //   subject: 'Contact - ' + this.nom + ' ' + this.prenom,
+      //   text: this.message,
+      // })
     }
   }
 }
